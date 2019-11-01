@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	   					   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	   					   http://www.springframework.org/schema/context
+	   					   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	   					   http://www.springframework.org/schema/tx
+	   					   http://www.springframework.org/schema/tx/spring-tx.xsd
+	   					   http://www.springframework.org/schema/aop
+	   					   http://www.springframework.org/schema/aop/spring-aop.xsd">
+	   <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	   		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	   		<property name="url" value="jdbc:mysql://localhost:3306/book?useUnicode=true&amp;characterEncoding=utf-8"></property>
+	   		<property name="username" value="root"></property>
+	   		<property name="password" value="sa"></property>
+	   </bean>					   
+	   <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	   		<property name="dataSource" ><ref bean="dataSource"/></property>
+	   		<property name="hibernateProperties">
+	   			<props>
+	   				<prop key="hibernate.dialect">
+	   					org.hibernate.dialect.MySQL5Dialect
+	   				</prop>
+	   			</props>
+	   		</property>
+	   		<property name="mappingResources">
+	   				<list><value>/entity/Bookinfo.hbm.xml</value></list>
+	   		</property>
+	   </bean>
+	   <bean id="bookinfoDAO" class="entity.BookinfoDAO">
+	   		<property name="sessionFactory"><ref bean="sessionFactory"/></property>
+	   </bean>
+	  <!--  配置Hibernate事务管理器 -->
+	  <bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	  	<property name="sessionFactory" ref="sessionFactory"></property>
+	  </bean>
+	 <!--  声明式容器事务管理，transaction-manager指定事物管理器为transactionManager -->
+	 <tx:advice id="txAdvice" transaction-manager="txManager">
+	 	<tx:attributes>
+	 		<tx:method name="get*" read-only="true"/>
+	 		<tx:method name="*"/>
+	 	</tx:attributes>
+	 </tx:advice>
+	 <aop:config>
+	 <!-- 只对业务逻辑层实施事物 -->
+	 <aop:pointcut expression="execution(*service..*Service.*(..))" id="serviceOperation"/>
+	 <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
+	 </aop:config>
+	 <bean id="bookinfoService" class="service.BookinfoServiceImpl">
+	 	<property name="bookinfoDAO"><ref bean="bookinfoDAO"/></property>
+	 </bean>
+	 <bean id="bookinfoAction" class="action.BookinfoAction" scope="prototype">
+	 		<property name="bookinfoService"><ref bean="bookinfoService"/></property>
+	 </bean>
+</beans>

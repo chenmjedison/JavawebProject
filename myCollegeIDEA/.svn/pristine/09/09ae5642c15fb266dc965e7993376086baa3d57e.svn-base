@@ -1,0 +1,83 @@
+package com.lanhai.pojo;
+
+public class WenJuan {
+
+	private Integer wjId;
+	private String sjName;
+	//问卷包含的题目数
+	private String wjNum;
+	private String wjType;
+	
+	private String wjBeiZhu;
+
+	public WenJuan() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public WenJuan(int wjId, String sjName, String wjNum, String wjType, String wjBeiZhu) {
+		super();
+		this.wjId = wjId;
+		this.sjName = sjName;
+		this.wjNum = wjNum;
+		this.wjType = wjType;
+		this.wjBeiZhu = wjBeiZhu;
+	}
+
+	@Override
+	public String toString() {
+		return "WenJuan [wjId=" + wjId + ", sjName=" + sjName + ", wjNum=" + wjNum + ", wjType=" + wjType
+				+ ", wjBeiZhu=" + wjBeiZhu + "]";
+	}
+
+	public WenJuan(String sjName, String wjNum, String wjType, String wjBeiZhu) {
+		super();
+		this.sjName = sjName;
+		this.wjNum = wjNum;
+		this.wjType = wjType;
+		this.wjBeiZhu = wjBeiZhu;
+	}
+
+	public int getWjId() {
+		return wjId;
+	}
+
+	public void setWjId(int wjId) {
+		this.wjId = wjId;
+	}
+
+	public String getSjName() {
+		return sjName;
+	}
+
+	public void setSjName(String sjName) {
+		this.sjName = sjName;
+	}
+
+	public String getWjNum() {
+		return wjNum;
+	}
+
+	public void setWjNum(String wjNum) {
+		this.wjNum = wjNum;
+	}
+
+	public String getWjType() {
+		return wjType;
+	}
+
+	public void setWjType(String wjType) {
+		this.wjType = wjType;
+	}
+
+	public String getWjBeiZhu() {
+		return wjBeiZhu;
+	}
+
+	public void setWjBeiZhu(String wjBeiZhu) {
+		this.wjBeiZhu = wjBeiZhu;
+	}
+	
+	
+	
+}

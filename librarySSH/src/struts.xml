@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configration 2.5//EN"
+"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8"/><!-- 这个地方要注意如果改成GBK的话在修改页面提交的时候会出现页面乱码 -->
+	<!-- 当struts.xml改动后，是否重新加载 -->
+	<constant name="struts.configuration.xml.reload" value="true"/>
+	<!-- 是否开启动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<package name="default" extends="struts-default" >
+		<global-allowed-methods>regex:.*</global-allowed-methods>
+		<!-- 图书管理的Action -->
+		<action name="bookAction" class="action.BookinfoAction">
+			<result name="add">/WEB-INF/book/add.html</result>
+			<result name="list">/WEB-INF/book/list.jsp</result>
+			<result name="success" type="redirectAction">bookAction!showBooks.action</result>
+			<result name="edit">/WEB-INF/book/edit.jsp</result>
+			<!-- 错误处理 -->
+			<exception-mapping result="error" exception="java.lang.Exception"></exception-mapping>
+			<result name="error">/WEB-INF/book/error.jsp</result>
+		</action>
+	</package>
+	
+</struts>

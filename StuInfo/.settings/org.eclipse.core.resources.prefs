@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//WebRoot/failure.jsp=UTF-8
+encoding//WebRoot/login.jsp=UTF-8
+encoding//WebRoot/register.jsp=UTF-8
+encoding//src/bean/DBManager.java=UTF-8
+encoding//src/servlet/AddServlet.java=GBK
+encoding//src/servlet/DeleteServlet.java=GBK
+encoding//src/servlet/InfoServlet.java=GBK

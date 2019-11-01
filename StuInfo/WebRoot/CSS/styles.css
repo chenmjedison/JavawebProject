@@ -1,0 +1,28 @@
+body{}
+label{
+			text-align:right;
+			width:80px; 
+			color:blue; 
+}
+.myinput{ 
+			border: 1px solid;
+			border-color:azure;
+			border-style:outset; 
+			width:160px;
+			heigth:30px; 
+}
+
+.mybutton{
+			font-style:bold; 
+			font-size:18px;
+			background-color:orange; 
+			border-color:orange; 
+			width:100px; 
+			heigth:40px; 
+}
+		
+#title{
+			color:#FF7B0B; 
+			font-size:40px; 
+			font-weight:bold; 
+}

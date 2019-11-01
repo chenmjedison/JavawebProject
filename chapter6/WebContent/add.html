@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>添加图书信息</title>
+<link rel="stylesheet" href="CSS/book.css" type="text/css">
+<script type="text/javascript" src="JavaScript/book.js"></script>
+</head>
+<body>
+<h2 align="center">添加学生信息</h2>
+	<form name="form1" action="add.jsp" method="post" onSubmit="return check()">
+		<table align="center" width="30%" border="1px">
+			<tr><th width="30%">书名:</th><td><input type="text" name="bookname"></td></tr>
+			<tr><th width="30%">作者:</th><td><input type="text" name="author"></td></tr>
+			<tr><th width="30%">出版社:</th><td><input type="text" name="press"></td></tr>
+			<tr><th width="30%">价格:</th><td><input type="text" name="price"></td></tr>
+			<tr><th colspan="2"><input type="submit" value="添加"/><input type="reset" value="重置"></th></tr>
+		</table>
+	</form>
+</body>
+</html>

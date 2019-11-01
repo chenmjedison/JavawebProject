@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//WebContent/wenjuanadd.jsp=UTF-8
+encoding//src/com/lanhai/controller/UserController.java=UTF-8
+encoding//src/com/lanhai/dao/ManageDao.java=GBK
+encoding//src/com/lanhai/dao/ManageDynamicProvider.java=UTF-8
+encoding//src/com/lanhai/dao/TiMuDao.java=GBK
+encoding//src/com/lanhai/utils/ChartUtil.java=UTF-8

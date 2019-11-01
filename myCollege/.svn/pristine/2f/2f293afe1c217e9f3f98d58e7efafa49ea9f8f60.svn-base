@@ -1,0 +1,26 @@
+package com.lanhai.service;
+
+import com.github.pagehelper.PageInfo;
+import com.lanhai.dao.TiMuDao;
+import com.lanhai.pojo.TiMu;
+
+public interface TiMuService {
+	//添加题目
+	public boolean addTiMu(TiMu tiMu);
+   //分页查询题目
+	public PageInfo<TiMu> findTiMuByPage(int currentPage);
+	
+	//根据id 查询单个题目
+	public TiMu findTiMuById(Integer tId);
+	
+	//根据Id删除题目信息
+	public void deleteTiMu(Integer tId);
+	
+	//根据题目类型查询题目信息
+	public PageInfo<TiMu> findTiMuType(int pageNum,String wjType);
+	
+	//动态修改
+	public void updateTiMu(TiMu tiMu);
+	
+
+}

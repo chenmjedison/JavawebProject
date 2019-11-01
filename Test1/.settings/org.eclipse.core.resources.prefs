@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//WebRoot/CSS/styles.css=GBK
+encoding//WebRoot/JavaScript/book.js=GBK
+encoding//WebRoot/add.html=UTF-8
+encoding//WebRoot/add.jsp=UTF-8
+encoding//WebRoot/edit.jsp=GBK
+encoding//WebRoot/edit_do.jsp=UTF-8
+encoding//WebRoot/index.jsp=UTF-8
+encoding//WebRoot/table.jsp=UTF-8
+encoding//WebRoot/welcome.jsp=UTF-8
+encoding//src/bean/Book.java=GBK
+encoding/<project>=UTF-8

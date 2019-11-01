@@ -1,0 +1,18 @@
+package com.lanhai.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+@Controller
+public class FormController {
+	
+	//¶¯Ì¬Ò³ÃæÌø×ª
+	@RequestMapping(value="/{formName}")
+	public String formMethod(@PathVariable String formName){
+		return formName; 
+	}
+	
+}
