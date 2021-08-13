@@ -1,4 +1,0 @@
-dataSource.driverClassName=com.mysql.jdbc.Driver
-dataSource.url=jdbc:mysql://localhost/test
-dataSource.username=root
-dataSource.password=123
