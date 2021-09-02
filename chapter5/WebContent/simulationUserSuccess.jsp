@@ -24,7 +24,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <%
-    String name=(String)session.getAttribute("LoginUserName");
+    //String name=(String)session.getAttribute("LoginUserName");
+    String name=(String)session.getAttribute("name");
     if(name==null){
     out.println("<h3>请先登录再访问，5秒后返回<a href=\"login.html\">登录页面</a>!</h3>");
     response.setHeader("Refresh","5;url=login.html");
