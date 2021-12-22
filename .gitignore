@@ -1,31 +1,17 @@
 /.metadata/
 build/
-# Eclipse
-.project
+Servers/
 .classpath
 .settings/
- 
-#maven
-target/
-dependency-reduced-pom.xml
-pom.xml.versionsBackup
-.factorypath
- 
-out/
- 
-# Gradel
-.gradle/
-build/
- 
-# IDEA
-.idea/
-*.ipr
+.project
+*.class
+ *.iws
 *.iml
-*.iws
- 
-# temp ignore
-*.log
-*.cache
-*.diff
-*.patch
-*.tmp
+*.ipr
+target/
+
+.externalToolBuilders
+*svn/
+.idea/
+*.jar
+~*
